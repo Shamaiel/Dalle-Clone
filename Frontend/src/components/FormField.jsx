@@ -2,9 +2,9 @@ import React from 'react'
 
 const FormField = () => {
   return (
-    <div>
-      From feild
-    </div>
+   <section>
+    <h1>Form</h1>
+   </section>
   )
 }
 
