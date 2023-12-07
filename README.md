@@ -1,1 +1,1 @@
-# Image-Generator-app
+# Dall-e CLone
