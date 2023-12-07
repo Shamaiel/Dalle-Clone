@@ -13,7 +13,7 @@ const CreatePost = () => {
     prompt: '',
     photo: '',
   });
-
+   
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -90,11 +90,11 @@ const CreatePost = () => {
             labelName="Your Name"
             type="text"
             name="name"
-            placeholder="Ex., john doe"
+            placeholder="Ex., shamaiel wani"
             value={form.name}
             handleChange={handleChange}
           />
-
+        
           <FormField
             labelName="Prompt"
             type="text"
