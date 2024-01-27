@@ -36,7 +36,7 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
 
-        // https://dalle-clone-4o9f.onrender.com
+      
         const response = await fetch(
           `${url}/api/v1/dalle`,
           {
@@ -97,7 +97,7 @@ const CreatePost = () => {
     <section className="max-w-7xl mx-auto">
      
       <div>
-        <h1 className="font-extrabold text-[#222328] text-[32px]">Create</h1>
+        <h1 className="font-extrabold text-[#666e75] text-[32px]">Create</h1>
         <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">
           Generate an imaginative image through DALL-E AI and share it with the
           community
@@ -110,7 +110,7 @@ const CreatePost = () => {
             labelName="Your Name"
             type="text"
             name="name"
-            placeholder="Ex., shamaiel wani"
+            placeholder="Ex. shamaiel wani"
             value={form.name}
             handleChange={handleChange}
           />
@@ -126,7 +126,7 @@ const CreatePost = () => {
             handleSurpriseMe={handleSurpriseMe}
           />
 
-          <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center">
+          <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-74 p-3 h-64 flex justify-center items-center">
             {form.photo ? (
               <img
                 src={form.photo}
@@ -134,10 +134,10 @@ const CreatePost = () => {
                 className="w-full h-full object-contain"
               />
             ) : (
-              <img
+              <img 
                 src={preview}
                 alt="preview"
-                className="w-9/12 h-9/12 object-contain opacity-40"
+                className="w-30 h-11 object-contain opacity-40"
               />
             )}
 

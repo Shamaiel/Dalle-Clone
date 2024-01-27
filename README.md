@@ -3,6 +3,7 @@
 
 ![Project Image](<add_image_url_here>)
 
+
 ## Description
 
 This is a MERN (MongoDB, Express, React, Node.js) website that allows users to generate AI images using the OpenAI API, specifically DALL-E. Users can create unique images, share them with the community, and download their creations. The project is built with a focus on simplicity and user engagement.
@@ -35,13 +36,9 @@ Check out the live demo [here](<add_live_demo_url_here>).
 
 ## Usage
 
-1. Start the server: `npm start` (from the root directory)
-2. Start the client: `npm start` (from the client directory)
-3. Open your browser and visit `http://localhost:3000` to access the application.
-
-## Contributing
-
-Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUTING.md).
+1. Start the server: `npm run start` (from the root directory)
+2. Start the client: `npm run dev` (from the client directory)
+3. Open your browser and visit `http://localhost:8080` to access the application.
 
 
 ## Acknowledgments

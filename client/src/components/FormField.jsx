@@ -14,7 +14,7 @@ const FormField = ({
     <div className="flex items-center gap-2 mb-2">
       <label
         htmlFor={name}
-        className="block text-3xl font-medium text-gray-900"
+        className="block text-3xl font-medium text-[#666e75]"
       >
         {labelName}
       </label>
