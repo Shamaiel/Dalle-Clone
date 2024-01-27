@@ -18,7 +18,7 @@ app.use('/api/v1/dalle', dalleRoutes);
 
 app.get('/', async (req, res) => {
   res.status(200).json({
-    message: 'Hello from DALL.E!',
+    message: 'Hello from Image Gen!',
   });
 });
 
@@ -31,9 +31,11 @@ const startServer = async () => {
     console.log(error);
   }
 
-};
+}
 
 startServer();
+
+
 
 
 
