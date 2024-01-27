@@ -9,7 +9,7 @@ const App = () => (
     
     <header className="w-full flex justify-between items-center bg-purple-500 sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4] shadow-md">
       <Link to="/">
-        <img src="https://envisage.nz/wp-content/uploads/2023/02/coNTrolAi_cyborg_holding_a_magic_flower_romantic_pose_neon.jpg" alt="logo" class="w-12 h-auto rounded" />
+        <img src="https://envisage.nz/wp-content/uploads/2023/02/coNTrolAi_cyborg_holding_a_magic_flower_romantic_pose_neon.jpg" alt="logo" className="w-12 h-auto rounded" />
       </Link>
 
       <Link to="/create-post" className="font-inter font-medium bg-[#000000] text-white px-4 py-2 rounded-md">Create</Link>
