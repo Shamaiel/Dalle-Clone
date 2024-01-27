@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Card, FormField, Loader } from '../components';
-import Footer from '../components/footer';
+
 
 
 const RenderCards = ({ data, title }) => {
@@ -16,6 +16,10 @@ const RenderCards = ({ data, title }) => {
   );
 };
 
+
+const url = "https://ill-cyan-lamb-garb.cyclic.app"
+
+
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
@@ -29,7 +33,7 @@ const Home = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('https://dalle-clone-4o9f.onrender.com/api/v1/post', {
+      const response = await fetch( `${url}/api/v1/dalle`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -111,7 +115,7 @@ const Home = () => {
             </div>
           </>
         )}
-        <Footer/>
+      
       </div>
     </section>
   );

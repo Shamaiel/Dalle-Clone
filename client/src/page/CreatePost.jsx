@@ -5,9 +5,11 @@ import { preview } from "../assets";
 import { getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
 
-const url = "https://dalle-clone-4o9f.onrender.com"
+// const url = "https://dalle-clone-4o9f.onrender.com"
+const url = "https://ill-cyan-lamb-garb.cyclic.app"
 
 const CreatePost = () => {
+ 
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -27,6 +29,8 @@ const CreatePost = () => {
     setForm({ ...form, prompt: randomPrompt });
   };
 
+
+  
   const generateImage = async () => {
     if (form.prompt) {
       try {
@@ -58,6 +62,7 @@ const CreatePost = () => {
     }
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -65,7 +70,7 @@ const CreatePost = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          "https://dalle-clone-4o9f.onrender.com/api/v1/post",
+          `${url}/api/v1/dalle`,
           {
             method: "POST",
             headers: {
@@ -90,6 +95,7 @@ const CreatePost = () => {
 
   return (
     <section className="max-w-7xl mx-auto">
+     
       <div>
         <h1 className="font-extrabold text-[#222328] text-[32px]">Create</h1>
         <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">
@@ -167,7 +173,16 @@ const CreatePost = () => {
         </div>
       </form>
     </section>
+
   );
 };
 
 export default CreatePost;
+
+
+
+
+
+
+
+
