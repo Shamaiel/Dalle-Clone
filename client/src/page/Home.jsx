@@ -17,7 +17,7 @@ const RenderCards = ({ data, title }) => {
 };
 
 
-const url = "https://ill-cyan-lamb-garb.cyclic.app"
+const url = "https://lucky-nightgown-tick.cyclic.app"
 
 
 const Home = () => {

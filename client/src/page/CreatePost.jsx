@@ -5,8 +5,7 @@ import { preview } from "../assets";
 import { getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
 
-// const url = "https://dalle-clone-4o9f.onrender.com"
-const url = "https://ill-cyan-lamb-garb.cyclic.app"
+const url = "https://lucky-nightgown-tick.cyclic.app"
 
 const CreatePost = () => {
  
