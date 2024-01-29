@@ -5,7 +5,8 @@ import { preview } from "../assets";
 import { getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
 
-const url = "https://lucky-nightgown-tick.cyclic.app"
+
+const url = "https://frightened-fly-gabardine.cyclic.app"
 
 const CreatePost = () => {
  
@@ -31,11 +32,11 @@ const CreatePost = () => {
 
   
   const generateImage = async () => {
+     console.log(form.prompt)
     if (form.prompt) {
       try {
         setGeneratingImg(true);
 
-      
         const response = await fetch(
           `${url}/api/v1/dalle`,
           {
@@ -43,9 +44,10 @@ const CreatePost = () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-              prompt: form.prompt,
-            }),
+            body: JSON.stringify(
+              form.prompt
+            
+            ),
           }
         );
 
