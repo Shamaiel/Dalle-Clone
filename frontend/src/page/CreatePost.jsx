@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { preview } from '../assets';
 import { getRandomPrompt } from '../utils';
 import { FormField, Loader } from '../components';
+import axios from 'axios'
 
 const CreatePost = () => {
   const navigate = useNavigate();
@@ -14,7 +15,9 @@ const CreatePost = () => {
     photo: '',
   });
 
-  const url = "https://happy-shorts-calf.cyclic.app"
+  // const url = "https://happy-shorts-calf.cyclic.app"
+  const url = "http://localhost:8080"
+
   
 
   const [generatingImg, setGeneratingImg] = useState(false);
@@ -30,15 +33,12 @@ const CreatePost = () => {
 
   const generateImage = async () => {
    console.log(form.prompt)
-    if (form.prompt) {
+    
+   if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch(`${url}/api/v1/dalle`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        
+        const response = await axios.post(`${url}/api/v1/dalle`, {
+         
             prompt: form.prompt,
           
         });
@@ -46,7 +46,7 @@ const CreatePost = () => {
         const data = await response
         console.log(data)
 
-        setForm({ ...form,   photo: data.photo.url });
+        setForm({ ...form,   photo: data.data.photo.url });
       } catch (err) {
         alert(err);
       } finally {
