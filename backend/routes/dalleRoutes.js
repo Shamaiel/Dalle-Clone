@@ -20,7 +20,7 @@ router.route('/').get((req, res) => {
 
 
 router.route('/').post(async (req, res) => {
-  res.send("wanii")
+  
  
   try {
     const {prompt}  = req.body;
