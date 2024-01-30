@@ -7,6 +7,8 @@ import { FormField, Loader } from "../components";
 import axios from "axios";
 
 const url = "http://localhost:3000";
+// const url = "https://shy-cyan-squirrel-boot.cyclic.app";
+
 
 const CreatePost = () => {
   const navigate = useNavigate();

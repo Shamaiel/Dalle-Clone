@@ -17,7 +17,10 @@ const RenderCards = ({ data, title }) => {
 };
 
 
-const url = "https://frightened-fly-gabardine.cyclic.app"
+// const url = "https://shy-cyan-squirrel-boot.cyclic.app"
+const url = "http://localhost:3000"
+
+
 
 
 const Home = () => {
