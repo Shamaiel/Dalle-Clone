@@ -15,8 +15,8 @@ const CreatePost = () => {
     photo: '',
   });
 
-  // const url = "https://happy-shorts-calf.cyclic.app"
-  const url = "http://localhost:8080"
+  const url = "https://happy-shorts-calf.cyclic.app"
+  // const url = "http://localhost:8080"
 
   
 
