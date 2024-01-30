@@ -27,7 +27,7 @@ const CreatePost = () => {
     setForm({ ...form, prompt: randomPrompt });
   };
 
-  
+
   const generateImage = async () => {
    console.log(form.prompt)
     if (form.prompt) {
@@ -44,7 +44,7 @@ const CreatePost = () => {
         });
 
         const data = await response
-           console.log(data)
+        console.log(data)
 
         setForm({ ...form,   photo: data.photo.url });
       } catch (err) {

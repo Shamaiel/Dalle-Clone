@@ -9,7 +9,9 @@ import dalleRoutes from './routes/dalleRoutes.js';
 dotenv.config();
 
 const app = express();
-app.use(cors({origin: "*"}));
+
+app.use(cors({origin: "https://dalle-clone-ochre.vercel.app",   methods: "GET,HEAD,PUT,PATCH,POST,DELETE" }));
+
 app.use(express.json({ limit: '50mb' }));
 
 app.use('/api/v1/post', postRoutes);
