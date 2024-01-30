@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { preview } from "../assets";
 import { getRandomPrompt } from "../utils";
 import { FormField, Loader } from "../components";
+import axios from 'axios'
 
 
-const url = "https://frightened-fly-gabardine.cyclic.app"
+const url = "http://localhost:3000"
 
 const CreatePost = () => {
  
@@ -37,25 +38,21 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
 
-        const response = await fetch(
+        const response = await axios.post(
           `${url}/api/v1/dalle`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(
-              form.prompt
-            
-            ),
+           {
+            prompt: form.prompt,  
           }
         );
 
-        const data = await response.json();
-        setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
-      } catch (err) {
+        const data = await response;
+        console.log(data.data.photo.url)
+        setForm({ ...form, photo: data.data.photo.url });
+      }
+       catch (err) {
         alert(err);
-      } finally {
+      } 
+      finally {
         setGeneratingImg(false);
       }
     } else {
@@ -93,6 +90,8 @@ const CreatePost = () => {
       alert("Please generate an image with proper details");
     }
   };
+
+  console.log(form.photo)
 
   return (
     <section className="max-w-7xl mx-auto">
