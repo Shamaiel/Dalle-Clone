@@ -14,7 +14,7 @@ const CreatePost = () => {
     photo: '',
   });
 
-  const url = "http://localhost:8080"
+  const url = "https://happy-shorts-calf.cyclic.app"
   
 
   const [generatingImg, setGeneratingImg] = useState(false);
@@ -27,7 +27,9 @@ const CreatePost = () => {
     setForm({ ...form, prompt: randomPrompt });
   };
 
+  
   const generateImage = async () => {
+   console.log(form.prompt)
     if (form.prompt) {
       try {
         setGeneratingImg(true);
@@ -36,13 +38,15 @@ const CreatePost = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
+        
             prompt: form.prompt,
-          }), 
+          
         });
 
-        const data = await response.json();
-        setForm({ ...form,   photo: `data:image/jpeg;base64,${data.photo}` });
+        const data = await response
+           console.log(data)
+
+        setForm({ ...form,   photo: data.photo.url });
       } catch (err) {
         alert(err);
       } finally {

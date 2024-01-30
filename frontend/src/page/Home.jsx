@@ -14,7 +14,7 @@ const RenderCards = ({ data, title }) => {
   );
 };
 
-const url = "http://localhost:8080"
+const url = "https://happy-shorts-calf.cyclic.app"
 
 
 const Home = () => {
