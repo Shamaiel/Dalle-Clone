@@ -16,6 +16,9 @@ app.use(cors({ origin: '*' }))
 
 app.use(express.json());
 
+const PORT = process.env.PORT
+console.log(PORT)
+
 app.use('/api/v1/post', postRoutes);
 app.use('/api/v1/dalle', dalleRoutes);
 
@@ -31,7 +34,7 @@ const startServer = async () => {
   try {
 
     connectDB(process.env.MONGODB_URL);
-    app.listen(3000, () => console.log('Server started on port ${3000} '));
+    app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
   } catch (error) {
     console.log(error);
   }
