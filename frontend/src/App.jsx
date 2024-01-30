@@ -1,17 +1,23 @@
-import React from 'react';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
-import { logo } from './assets';
-import { Home, CreatePost } from './page';
+import { logo } from "./assets";
+import { Home, CreatePost } from "./page";
 
 const App = () => (
   <BrowserRouter>
     <header className="w-full flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
       <Link to="/">
-        <img src={logo} alt="logo" className="w-28 object-contain" />
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQArAMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAAAgcFBgEDBAj/xABDEAABAwIEAgUIBggGAwAAAAABAAIDBBEFEiExBhMUQVFhcSIycoGRobHRByNTweHwM0JDUmJzosIVJYKTsvEWJDX/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMEAQX/xAAhEQADAAICAgMBAQAAAAAAAAAAAQIDERIhBDETQVEiYf/aAAwDAQACEQMRAD8ArVERbgEREAREQBERAEREAREQBERAEREAREQBERAFJuyipN2QEUREAREQBEXrwqkNdiVPS9T3jMexu59111Jt6QfR5EVlS8OYMJLChZYX0zu+aS8OYOHC1CwDK39Z3Z4rUvEv9K/lRWqKym8N4MY3HoDL3Gud/f3rUOLMMjw3EI+jsDKeZmZgBJsRoR8Paq8nj1jW2SVJmEREVBIIiIAi3/B8BwufCqWaaiY+R8LHOdndqSPFexnDGFSC7KBlvTf81rXiU1vZU8qK0RWNU8OYVFBI4UMYcGEjynb28VXLdWi+6qy4ax+yc1y9BERUkgpN2UVJuyAiiIgCIiALbeAKPPLV1j26MYI4z3k6+4D2rUlZvDVIaHBoonD60szv9Im/u0C0+NHK9/hC30ZKYWl9q9bRFEJhUwkv5Tch7NAPiV45nvEwOxBuF2TVT6l0pmcC4R6ACxtmat9baRUkQZ+hd6Tf7lr3HNNzsFiqALup5CT6JsD9y3GhwqWowuasbIxrGG+V25t/2VicRp21NC6B/mSte0+sBQtzkTlFiRUyKcsb4JpIZW5ZI3lj2nqcDYj2hQXllgREQFoYD/8ACo/5EfwW1YJW4fT0kjKpoLyPJWucKUstbhlBTwDy3wxgX2GmpKszC8CoMPYMsTZZbaySC59XYtnk54jGpfsoUtsrnFZI5I5zGdDG74KoW+aF9P8AFOJYXhuFTDEJImPnjeyGMszOkdlOjWgXK+X4wWxtBFtAsteR86XWtFkzx2SREUCYUm7KKk3ZARREQBERAZDAaL/EMXpKYg5HSAyW/dGp+XrVnQuAzE6ADq6tQtS+j6lyvqa57dsscd/G7j8FtzWeWxgFw46946l6HjTqd/pCu2c1b2ufZp6ytXmxQs4wipw76sQmBw73Wf8A2tW0YiIoAZNGgXJd3BVPLWSSV5rgbSc3mi/Ub3C7mycVOjqRa9M+X9FHI8RnVzc2lu9Qq3AuLW3yNFx2lc0EjZWmSPzXxBzfAuauurNpH+iFbtNtompNE43pei8TVrgLNmkdIOy5cQfeCsCt6+kSmD2mo/WiqZGn0S752Wirzck8WGtBERQOF1/Rk4Nho3EXtRt/4qwoKqKoibLBIHxu2cNiq7+jiWniw6lMr/rnU8bGMtf9XUre2zABd8meV7/w4jVKKSOrr+JMUqWh9XG+WjiLtTDC1gOVvZmJJPboqDhBELATezQFd/GcE+BDEMew90bqeojDa6lecoLj5AkYep1iARbWypJoygDsFlXCSR05REUgFJuyipN2QEUREAT1XRZLh2i/xDGKeE2yNdnfc2Fm6/IetSlbegb7w7Sigw+mp3AZi28npHU+9ZN7bBrRcO0bcdlj8lxTU2apY0yR2J1s5e+sw+WGmincx7WyDNEXOaQbDu8V6LuZaWwkanxjMKLBn2ec055Lerff3Aquytp49rHyVdPRlwtCzOQBpd23uHvWrLH5Fcr0dZZnAtXDUYMOeXc2NphFu43HusvfVMe57ntjc4NaMxsbDxWp/R5XSxVM9GyRwDgJQAdyND8Qt3lqqlkdXE42vGHHMDfVwb9/uV+O3xTRbC2jHYrTsxHC5hK273tLHfxON8rvG4v+SqrII0cPKG6tyG3QTb98b+tVpxDS9Fxeoa0WbI7mN/1fjdVZ19jLOlsxqIizFJanCsrocOw98ZsRHErAdO1ou5wA7SVW2A3ODUQAJPJj0A7lkWzW8/M43616NYlkSZ1ydP0oYl0vDG4fBJFyLiaYvOjrHyQ3tNx8FVKsbiNoniaQxjyWPYGyi7b2zA/0e9Vw3zRv61kzQoekcOURFSApN2UVJuyAiiIgC3DgWF8MdRWjQyHltPcNSfafctPAJNgLnqCs/CqWlocNpKd5mzsjGcgNsXW1O/atHjr+ts6lsyNNVTCoj8sk327V21NfPkZBK2wDbMa6QkAbaLpg6OZ2tjlkY+/kmQDLfvsdPFRfV1MUmQyyRZTZzGOLQD4BanpvpFqkxM3B9JirqzEZ690cmjizO3XSwA07AsR/4tQdVTU+1vyW2x1VZUvDYaqfYkkyuAA6yTfYLKYWyqr5HR0cj5GN/aSPeXPPXYZhYKmpmW3WifBfZpuEYBSYdXsqYat7nNBFnObYi3gtpjDKlk2ZjnmwYeVYud5TTp33slTXVdJWGCXLcfxv1/qXdTYg6Q82YZuW9rg0ONzZzSbXJ7FGnqeixTpdHfPhD6WlHNpqlsZeAXG2munq1VdceUbWuhnjabNDWkXv5zQ7fuN/arcxfGqaooXRRCZz5JGHywAGgOBVecSU3TKWohG7oWFp7wxpCqiqtPkJh3D2VsiXuirMRZnDk0kOF0MkTix7YYyHDq0XvicXXJN3FxusXgZ/ymi1/Ys+AXuY5w80jdenPpGrh0c49Q1UUMbXQvzuIcwAanw9RKqhnmDwX0BgkU1ThtbX1jy9zKeSKG/UMup/Pevn2H9DH6IWDLbqtP6M9eyaIiqIhSbsoqTdkBFERAZThqmNTjMGgLIjzHXF9tvfZWO6uqC8EvbcXIPKb8lqnBlLy6SaqcLGV2VvgPx+C2Fx1C34ISjs0Y46MhBU1bxm5kdtdCxl3WFzbTqGqwuNcVy4bJFHLeZ7230YzyQNLaj82WVpnObDK1rnAOYCQHaHVVpxDU9LxeokabtY7lt8B+NyoZaUp6R2/wCUbJNx1zo+W6nlDb7AsF/Yu3DPpBOHOJgo5bHq5g0Wios/yNrRV8tG51PGzKmpdPNSylx7HDTq7VksIxx+IQSTUxmp7PyuYH26r30Peq6We4RqBHWTQE6SszAd4/D4KcZG3pl2DLTtS/RYNVVVAikPSZhYR681w3b4rofOyemc6QHO0G3nO8rTUknsCNrJ+hyfWHyS0C4G2oXDK+foNVG8g5i25sOvT7lZ6PSmHorXGKfouJTxAWbmzN8DqvEtj4vp7PgqQ2wsWPPvH3rXFnpaZ5OfHwyNFi4Kf8qov5LPgF7mmwK8vC4hfTYc2oNojGzMezQLJYk2ljrJG0Ty+G+jitk19G7h0kbvBG2m4bdGBtSOJ8S0k/FfNUP6GMfwhXFj3G9TRYNkhw+ORzmcp8jpSA0EWvlt96p9oytaB1CywuWn2edcua7OURFwgFJuyipN2QEUte1t0RdBYVDPQ0lFDTtrKf6tgafrW6nrO/bddvT6S4tWU/8Aut+a0mJtO6Np5Me21lPJT/Yx+xaFnetG2d66N0qMXo6fDquWOphdI2HyWCRpLnXFhuq4JJN3G5OpPasi+OAsdliYDbQgbLHHQqq7dFObe+zhERVlAXqwuoFLiFPMTYNfYnuOh+K8qkwZntb2ldT7JS9NMsVtfR9ElHS6e5c231re/vUWV1IKecdLp7+RpzW9p71p3Lp/sY/YuOXT/Yx+xW8z1V5N/iM9jUtLVYbMxtTCXgZ2gSDcfkrTlkZWwMicRCy9tFjlCntmPy8jyWqaN5wWspWUNE19TC1zY2Ah0gBGi9hr6PO7/wBun3+1b81pMDYeS3NG0m2pI3XZlg+yZ7FYsrRpnyK0ukbZW1VDPSTROqYHBzCLCUdnitAG3aslkp/smexY1QuuXsyeRbprYREVZmCk3ZRUm7ICKIi6DuhfYWGy7OYvMFzdCao9HMXRJ5xXF1whxvZwi5RcInCnFo8HsUUuuhHp5icxee6XQs5s7Jn3bbtXSVydVwhBvZ3sfZoXPMXQCuboS5HdzF5+5Suoocb2ERFwiFJuyipN2QEUREAREQBERAEREAREQBERAEREByEREAXCIgCIiAKbdkRAf//Z" alt="logo" className="w-28 object-contain" />
+        
       </Link>
 
-      <Link to="/create-post" className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md">Create</Link>
+      <Link
+        to="/create-post"
+        className="font-inter font-medium bg-[#6469ff] text-white px-4 py-2 rounded-md"
+      >
+        Create
+      </Link>
     </header>
     <main className="sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)]">
       <Routes>
